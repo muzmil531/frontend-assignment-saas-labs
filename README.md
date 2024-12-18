@@ -1,6 +1,6 @@
 # Kickstarter Projects
 
-A React-based web application for displaying and managing Kickstarter projects with features like pagination and filtering.
+A React-based web application for displaying and managing Kickstarter projects with features like pagination and deatiled information.
 
 ## Features
 
