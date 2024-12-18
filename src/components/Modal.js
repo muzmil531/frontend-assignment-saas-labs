@@ -36,7 +36,7 @@ const Modal = ({ isOpen, onClose, project }) => {
               <p>{new Date(project['end.time']).toLocaleDateString()}</p>
             </div>
           </div>
-          <div className="modal-description">
+          <div className="modal-description info-item">
             <label>Description</label>
             <p>{project.blurb}</p>
           </div>
