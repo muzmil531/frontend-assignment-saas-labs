@@ -1,0 +1,247 @@
+.table-container {
+  overflow-x: auto;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin: 1.5rem auto;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.table-wrapper {
+  min-width: 100%;
+  overflow-x: auto;
+}
+
+.project-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: white;
+  font-size: 1rem;
+}
+
+.table-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #f8fafc;
+}
+
+.project-table th {
+  background-color: #f8fafc;
+  font-weight: 600;
+  color: #1a202c;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid #edf2f7;
+}
+
+.project-table td {
+  padding: 1.25rem 1.5rem;
+  color: #4a5568;
+  border-bottom: 1px solid #edf2f7;
+  transition: background-color 0.2s ease;
+}
+
+.table-row {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.table-row:hover {
+  background-color: #f7fafc;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.cell-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cell-label {
+  display: none;
+}
+
+.cell-value {
+  font-weight: 500;
+}
+
+.cell-value.title {
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.cell-value.percentage {
+  color: #48bb78;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  background-color: #f0fff4;
+  border-radius: 1rem;
+  display: inline-block;
+}
+
+.cell-value.amount {
+  color: #4a5568;
+  font-weight: 600;
+}
+
+.cell-value.author {
+  color: #718096;
+}
+
+.funding-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Loading State */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: #718096;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #edf2f7;
+  border-radius: 50%;
+  border-top-color: #4299e1;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Empty State */
+.no-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+  color: #718096;
+}
+
+.no-data-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  color: #cbd5e0;
+}
+
+.no-data p {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+  color: #4a5568;
+}
+
+.no-data-subtitle {
+  font-size: 0.875rem;
+  color: #718096;
+  margin-top: 0.5rem;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .table-container {
+    margin: 1rem;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+  }
+
+  .table-header {
+    display: none;
+  }
+
+  .project-table tr {
+    display: block;
+    margin-bottom: 1.25rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  .project-table tr:hover {
+    background: white;
+  }
+
+  .project-table td {
+    display: block;
+    padding: 1rem 1.25rem;
+    border: none;
+    background: white;
+  }
+
+  .cell-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .cell-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .cell-value {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .funding-info {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .cell-value.percentage {
+    width: auto;
+  }
+
+  .table-row td:not(:last-child) {
+    border-bottom: 1px solid #f0f2f5;
+  }
+}
+
+/* Small screen optimizations */
+@media (max-width: 480px) {
+  .table-container {
+    margin: 0rem;
+  }
+
+  .project-table td {
+    padding: 0.875rem 1rem;
+  }
+
+  .cell-value {
+    font-size: 0.9375rem;
+  }
+
+  .no-data {
+    padding: 2rem 1rem;
+  }
+}
